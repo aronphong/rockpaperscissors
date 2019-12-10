@@ -1,3 +1,3 @@
 # rockpaperscissors
 
-Created a simple implementation of grade-school classick "rock paper scissors". 
+Created a simple implementation of grade-school classic "rock paper scissors". 
