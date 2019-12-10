@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    function computerPlay() {
+        // Generate random option for computer
+        let options = ["rock", "paper", "scissors"]
+        let num = Math.floor(Math.random() * 4)
+        return options[num]
+    }
+
+    function playRound(playerSelection, computerSelection) {
+
+        if (playerSelection == "rock") {
+            if (computerSelection == "scissors") {
+                return 1 
+            } else if (computerSelection == "paper") {
+                return 2 
+            } else {
+                return  0 
+            }
+        }
+
+        if (playerSelection == "paper") {
+            if (computerSelection == "rock") {
+                return 1 
+            } else if (computerSelection == "scissors") {
+                return 2 
+            } else {
+                return 0 
+            }
+        }
+
+        if (playerSelection == "scissors") {
+            if (computerSelection == "paper") {
+                return 1 
+            } else if (computerSelection == "rock") {
+                return 2 
+            } else {
+                return 0 
+            }
+        }
+    }
+
+    function game() {
+
+        // set variables to count score
+        let playerScore = 0;
+        let computerScore = 0;
+
+        // play 5 rounds
+        for (var i = 1; i < 6; i++) {
+
+            // get user choice
+            var playerChoice = prompt("Choose rock, paper or scissors");
+            playerChoice = playerChoice.toLowerCase();
+
+            // generate computer choice
+            var computerSelection = computerPlay();
+
+            // play round and add to count score
+            var round = playRound(playerChoice, computerSelection)
+                if (round == 1) {
+                    playerScore += 1;
+                    console.log("Player Wins Round " + i + "!")
+                } else if (round == 2) {
+                    computerScore += 1;
+                    console.log("Computer Wins Round " + i + "!")
+                } else {
+                    console.log("Tie Round " + i + "!")
+                }
+        }
+
+        // Determine winner
+        if (playerScore > computerScore) {
+            return console.log("Player Wins! " + playerScore + " : " + computerScore)
+        } else {
+            return console.log("Computer Wins! " + computerScore + " : " + playerScore)
+        }
+    }
+
+    game();
+
+</script>
+</html>
